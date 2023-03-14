@@ -18,4 +18,12 @@ public class Category {
         this.cod_category = cod_category;
         this.desc_category = desc_category;
     }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "cod_category=" + cod_category +
+                ", desc_category='" + desc_category + '\'' +
+                '}';
+    }
 }
