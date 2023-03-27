@@ -1,4 +1,4 @@
-package com.jgfontes.recordingcrud;
+package com.jgfontes.recordingcrud.controller;
 
 import com.jgfontes.recordingcrud.entity.Category;
 import com.jgfontes.recordingcrud.service.CategoryService;

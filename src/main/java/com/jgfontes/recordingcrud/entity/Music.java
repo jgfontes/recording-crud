@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity(name = "Music")
-@AllArgsConstructor
 @NoArgsConstructor
 public class Music {
     @Id
@@ -21,4 +20,24 @@ public class Music {
 
     @Column(nullable = false)
     private String title;
+
+    public void setCod_music(int cod_music) {
+        this.cod_music = cod_music;
+    }
+
+    public Music(String title, int duration, Category category) {
+        this.title = title;
+        this.duration = duration;
+        this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "Music{" +
+                "cod_music=" + cod_music +
+                ", category=" + category +
+                ", duration=" + duration +
+                ", title='" + title + '\'' +
+                '}';
+    }
 }

@@ -14,9 +14,12 @@ public class Category {
     public Category() {
     }
 
-    public Category(int cod_category, String desc_category) {
-        this.cod_category = cod_category;
+    public Category(String desc_category) {
         this.desc_category = desc_category;
+    }
+
+    public void setCod_category(int cod_category) {
+        this.cod_category = cod_category;
     }
 
     @Override
