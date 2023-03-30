@@ -28,6 +28,7 @@ public class RecordingCrudApplication {
 	@Bean
 	public CommandLineRunner demo(CategoryService categoryService, MusicService musicService) {
 		return (args -> {
+//			CATEGORIES TEST
 //			System.out.println("Create category test");
 //			System.out.println("______________________\n");
 //			Category punkCategory = new Category("Punk Rock test");
@@ -42,30 +43,32 @@ public class RecordingCrudApplication {
 //			});
 //			System.out.println("______________________\n");
 
-			System.out.println("Find all categories");
-			System.out.println("______________________\n");
-			List<Category> categoriesListFound = categoryService.findAll();
-			categoriesListFound.stream().forEach(System.out::println);
-			System.out.println("______________________\n");
+//			System.out.println("Find all categories");
+//			System.out.println("______________________\n");
+//			List<Category> categoriesListFound = categoryService.findAll();
+//			categoriesListFound.stream().forEach(System.out::println);
+//			System.out.println("______________________\n");
 
-			//MUSIC TEST
-			System.out.println("Create Song");
-			System.out.println("______________________\n");
-			Optional<Category> category = categoryService.findById(1);
-			System.out.println(category.get());
-			Music newMusic = new Music("Master of Puppets", 836, category.get());
-			newMusic.setCod_music(101);
-			musicService.save(newMusic);
-			System.out.println("______________________\n");
+//			//MUSIC TEST
+//			System.out.println("Create Song");
+//			System.out.println("______________________\n");
+//			Optional<Category> category = categoryService.findById(1);
+//			System.out.println(category.get());
+//			Music newMusic = new Music("Master of Puppets", 836, category.get());
+//			newMusic.setCod_music(105);
+//			System.out.println(newMusic);
+//			musicService.save(newMusic);
+//			System.out.println("______________________\n");
+//
+//			musicService.deleteById(352);
+//
+//			System.out.println("Find all musics");
+//			System.out.println("______________________\n");
+//			List<Music> MusicListFound = musicService.findAll();
+//			MusicListFound.forEach(System.out::println);
+//			System.out.println("______________________\n");
 
-			musicService.deleteById(102);
-
-			System.out.println("Find all musics");
-			System.out.println("______________________\n");
-			List<Music> MusicListFound = musicService.findAll();
-			MusicListFound.forEach(System.out::println);
-			System.out.println("______________________\n");
-
+//			COMPANIES TEST
 
 		});
 	}
