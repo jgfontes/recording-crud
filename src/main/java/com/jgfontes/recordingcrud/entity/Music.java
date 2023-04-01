@@ -25,10 +25,30 @@ public class Music {
         this.cod_music = cod_music;
     }
 
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     public Music(String title, int duration, Category category) {
         this.title = title;
         this.duration = duration;
         this.category = category;
+    }
+
+    public int getCod_music() {
+        return cod_music;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     @Override

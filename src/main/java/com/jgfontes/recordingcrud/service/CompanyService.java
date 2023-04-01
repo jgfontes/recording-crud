@@ -24,4 +24,8 @@ public class CompanyService {
     public void deleteById(int companyId) {
         companyRepository.deleteById(companyId);
     }
+
+    public Company findByName(String companyName) {
+        return companyRepository.findByName(companyName);
+    }
 }

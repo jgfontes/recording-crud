@@ -14,4 +14,7 @@ public interface MusicRepository extends JpaRepository<Music, Integer> {
     @Modifying
     @Query(value = "DELETE FROM music WHERE cod_music = ?1", nativeQuery = true)
      public void deleteById(int musicId);
+
+    @Query(value = "SELECT * FROM music WHERE title = 'Master of Puppets'", nativeQuery = true)
+    Music findByName(String musicName);
 }

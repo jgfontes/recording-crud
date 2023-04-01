@@ -8,7 +8,6 @@ import java.time.LocalDate;
 
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
 public class Recording {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,4 +27,22 @@ public class Recording {
 
     @Column()
     private LocalDate recording_date;
+
+    public Recording(Company company, Artist artist, Music music, LocalDate recording_date) {
+        this.company = company;
+        this.artist = artist;
+        this.music = music;
+        this.recording_date = recording_date;
+    }
+
+    @Override
+    public String toString() {
+        return "Recording{" +
+                "cod_recording=" + cod_recording +
+                ", company=" + company +
+                ", artist=" + artist +
+                ", music=" + music +
+                ", recording_date=" + recording_date +
+                '}';
+    }
 }

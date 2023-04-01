@@ -1,21 +1,18 @@
 package com.jgfontes.recordingcrud;
 
-import com.jgfontes.recordingcrud.entity.Artist;
-import com.jgfontes.recordingcrud.entity.Category;
-import com.jgfontes.recordingcrud.entity.Company;
-import com.jgfontes.recordingcrud.entity.Music;
-import com.jgfontes.recordingcrud.service.ArtistService;
-import com.jgfontes.recordingcrud.service.CategoryService;
-import com.jgfontes.recordingcrud.service.CompanyService;
-import com.jgfontes.recordingcrud.service.MusicService;
+import com.jgfontes.recordingcrud.entity.*;
+import com.jgfontes.recordingcrud.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cglib.core.Local;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,12 +27,35 @@ public class RecordingCrudApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(CategoryService categoryService, MusicService musicService, CompanyService companyService, ArtistService artistService) {
+	public CommandLineRunner demo(CategoryService categoryService, MusicService musicService, CompanyService companyService, ArtistService artistService, RecordingService recordingService) {
 		return (args -> {
-			testCategory(categoryService);
-			testMusic(musicService, categoryService);
-			testCompany(companyService);
-			testArtist(artistService);
+//			testCategory(categoryService);
+//			testMusic(musicService, categoryService);
+//			testCompany(companyService);
+//			testArtist(artistService);
+
+			//TEST RECORDING FLOW BELOW
+			musicService.findAll().forEach(System.out::println);
+			companyService.findAll().forEach(System.out::println);
+			artistService.findAll().forEach(System.out::println);
+
+//			System.out.println(artistService.findByName("Metallica"));
+//			System.out.println(companyService.findByName("Elektra Records"));
+//			System.out.println(musicService.findByName("Master of Puppets"));
+//			LocalDate recordingDate = LocalDate.parse("2012-12-03", DateTimeFormatter.ISO_LOCAL_DATE);
+//			System.out.println(recordingDate);
+
+			Recording recording = new Recording(
+				companyService.findByName("Elektra Records"),
+				artistService.findByName("Metallica"),
+				musicService.findByName("Master of Puppets"),
+				LocalDate.parse("2012-12-03", DateTimeFormatter.ISO_LOCAL_DATE)
+			);
+
+			System.out.println(recording);
+			recordingService.save(recording);
+//			recordingService.findAll().forEach(System.out::println);
+
 		});
 	}
 
