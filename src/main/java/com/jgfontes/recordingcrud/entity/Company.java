@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
 public class Company {
     @Id
@@ -17,4 +16,18 @@ public class Company {
 
     @Column(nullable = false)
     private String country;
+
+    public Company(String company_name, String country) {
+        this.company_name = company_name;
+        this.country = country;
+    }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "cod_company=" + cod_company +
+                ", company_name='" + company_name + '\'' +
+                ", country='" + country + '\'' +
+                '}';
+    }
 }

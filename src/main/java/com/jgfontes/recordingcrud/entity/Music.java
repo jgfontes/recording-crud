@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "Music")
+@Entity
 @NoArgsConstructor
 public class Music {
     @Id

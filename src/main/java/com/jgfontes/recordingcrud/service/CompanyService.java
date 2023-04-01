@@ -3,9 +3,11 @@ package com.jgfontes.recordingcrud.service;
 import com.jgfontes.recordingcrud.entity.Company;
 import com.jgfontes.recordingcrud.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CompanyService {
 
     @Autowired
@@ -17,6 +19,9 @@ public class CompanyService {
 
     public Company save(Company company) {
         return companyRepository.save(company);
+    }
 
+    public void deleteById(int companyId) {
+        companyRepository.deleteById(companyId);
     }
 }
