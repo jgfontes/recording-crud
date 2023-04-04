@@ -11,7 +11,8 @@ public class Music {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int cod_music;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+//    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_key", referencedColumnName = "cod_category")
     private Category category;
 

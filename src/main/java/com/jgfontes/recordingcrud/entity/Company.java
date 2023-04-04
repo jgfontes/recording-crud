@@ -1,7 +1,6 @@
 package com.jgfontes.recordingcrud.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity
@@ -12,13 +11,13 @@ public class Company {
     private int cod_company;
 
     @Column(nullable = false)
-    private String company_name;
+    private String name;
 
     @Column(nullable = false)
     private String country;
 
     public Company(String company_name, String country) {
-        this.company_name = company_name;
+        this.name = company_name;
         this.country = country;
     }
 
@@ -26,7 +25,7 @@ public class Company {
     public String toString() {
         return "Company{" +
                 "cod_company=" + cod_company +
-                ", company_name='" + company_name + '\'' +
+                ", company_name='" + name + '\'' +
                 ", country='" + country + '\'' +
                 '}';
     }

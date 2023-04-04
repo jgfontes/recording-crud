@@ -45,4 +45,8 @@ public class Recording {
                 ", recording_date=" + recording_date +
                 '}';
     }
+
+    public void setCod_recording(int cod_recording) {
+        this.cod_recording = cod_recording;
+    }
 }
