@@ -22,6 +22,18 @@ public class Category {
         this.cod_category = cod_category;
     }
 
+    public int getCod_category() {
+        return cod_category;
+    }
+
+    public String getDesc_category() {
+        return desc_category;
+    }
+
+    public void setDesc_category(String desc_category) {
+        this.desc_category = desc_category;
+    }
+
     @Override
     public String toString() {
         return "Category{" +

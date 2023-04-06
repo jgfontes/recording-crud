@@ -65,7 +65,7 @@ public class RecordingCrudApplication {
 			System.out.println("Delete");
 			System.out.println("______________________\n");
 			List.of(102, 152, 202, 252, 302).forEach(categoryId -> {
-				categoryService.delete(categoryId);
+				categoryService.deleteById(categoryId);
 			});
 			System.out.println("______________________\n");
 

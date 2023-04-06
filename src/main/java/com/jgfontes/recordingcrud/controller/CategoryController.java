@@ -1,12 +1,11 @@
 package com.jgfontes.recordingcrud.controller;
 
+import com.jgfontes.recordingcrud.entity.Artist;
 import com.jgfontes.recordingcrud.entity.Category;
 import com.jgfontes.recordingcrud.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,8 +15,27 @@ public class CategoryController {
     @Autowired
     CategoryService categoryService;
 
-    @GetMapping("/categories")
-    public List<Category> getCategories() {
+    @GetMapping("/category/findAll")
+    public List<Category> findAll() {
         return categoryService.findAll();
+    }
+
+    @GetMapping("/category/findById")
+    public Category findById(@RequestParam String id) {
+        return categoryService.findById(Integer.parseInt(id)).get();
+    }
+
+    @PostMapping (path = "/category/create",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            headers = "content-type=text/json")
+    public Category create(@RequestBody Category category) {
+        System.out.println(category);
+        return categoryService.save(category);
+    }
+
+    @DeleteMapping(path = "/category/deleteById/{id}")
+    public void deleteById(@PathVariable String id) {
+        categoryService.deleteById(Integer.parseInt(id));
     }
 }
