@@ -9,13 +9,13 @@ public class Category {
     private int cod_category;
 
     @Column(nullable = false)
-    private String description;
+    private String desc_category;
 
     public Category() {
     }
 
     public Category(String desc_category) {
-        this.description = desc_category;
+        this.desc_category = desc_category;
     }
 
     public void setCod_category(int cod_category) {
@@ -26,7 +26,7 @@ public class Category {
     public String toString() {
         return "Category{" +
                 "cod_category=" + cod_category +
-                ", desc_category='" + description + '\'' +
+                ", desc_category='" + desc_category + '\'' +
                 '}';
     }
 }

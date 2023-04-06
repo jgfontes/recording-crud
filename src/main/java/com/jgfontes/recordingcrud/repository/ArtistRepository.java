@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ArtistRepository extends JpaRepository<Artist, Integer> {
 
-    @Query(value = "SELECT * FROM public.artist WHERE artist_name = 'Metallica'", nativeQuery = true)
+    @Query(value = "SELECT * FROM public.artist WHERE artist_name = ?1", nativeQuery = true)
     Artist findByName(String artistName);
 }

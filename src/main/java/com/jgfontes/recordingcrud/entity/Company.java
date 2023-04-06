@@ -11,13 +11,13 @@ public class Company {
     private int cod_company;
 
     @Column(nullable = false)
-    private String name;
+    private String company_name;
 
     @Column(nullable = false)
     private String country;
 
     public Company(String company_name, String country) {
-        this.name = company_name;
+        this.company_name = company_name;
         this.country = country;
     }
 
@@ -25,7 +25,7 @@ public class Company {
     public String toString() {
         return "Company{" +
                 "cod_company=" + cod_company +
-                ", company_name='" + name + '\'' +
+                ", company_name='" + company_name + '\'' +
                 ", country='" + country + '\'' +
                 '}';
     }

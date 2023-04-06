@@ -29,32 +29,27 @@ public class RecordingCrudApplication {
 	@Bean
 	public CommandLineRunner demo(CategoryService categoryService, MusicService musicService, CompanyService companyService, ArtistService artistService, RecordingService recordingService) {
 		return (args -> {
+			System.out.println(categoryService.findAll());
 //			testCategory(categoryService);
 //			testMusic(musicService, categoryService);
 //			testCompany(companyService);
 //			testArtist(artistService);
 
-			//TEST RECORDING FLOW BELOW
-			musicService.findAll().forEach(System.out::println);
-			companyService.findAll().forEach(System.out::println);
-			artistService.findAll().forEach(System.out::println);
-
-//			System.out.println(artistService.findByName("Metallica"));
-//			System.out.println(companyService.findByName("Elektra Records"));
-//			System.out.println(musicService.findByName("Master of Puppets"));
-//			LocalDate recordingDate = LocalDate.parse("2012-12-03", DateTimeFormatter.ISO_LOCAL_DATE);
-//			System.out.println(recordingDate);
-
-			Recording recording = new Recording(
-				companyService.findByName("Elektra Records"),
-				artistService.findByName("Metallica"),
-				musicService.findByName("Master of Puppets"),
-				LocalDate.parse("2012-12-03", DateTimeFormatter.ISO_LOCAL_DATE)
-			);
-
-			System.out.println(recording);
-			recordingService.save(recording);
-//			recordingService.findAll().forEach(System.out::println);
+//			//TEST RECORDING FLOW BELOW
+//			musicService.findAll().forEach(System.out::println);
+//			companyService.findAll().forEach(System.out::println);
+//			artistService.findAll().forEach(System.out::println);
+//
+//			Recording recording = new Recording(
+//				companyService.findByName("Elektra Records"),
+//				artistService.findByName("Metallica"),
+//				musicService.findByName("Master of Puppets"),
+//				LocalDate.parse("2012-12-03", DateTimeFormatter.ISO_LOCAL_DATE)
+//			);
+//			recording.setCod_recording(103);
+//
+//			System.out.println(recording);
+//			recordingService.save(recording);
 
 		});
 	}
